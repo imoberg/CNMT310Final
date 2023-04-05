@@ -1,0 +1,19 @@
+SPRING ONE BACKLOG
+-Create Design Mockups (Estimated: )
+	- Authentication Page/Home Page (Login Creds)
+		-WireFrame
+		-Accessibility
+	- Bookmarks Page
+		-WireFrame
+		-Accessibility
+-User Auth (Estimated: )
+	-Create Webform
+		-Correct Login/Logout creds 
+		-
+	-Form-Action Page
+		-Error Handling
+		-Security Handling
+	-Call Auth WebService (Estimated: (Medium/Large))
+		-How To 
+	-Parse Auth Response
+-
