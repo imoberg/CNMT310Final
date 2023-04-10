@@ -1,11 +1,10 @@
 <?php
-print '<!DOCTYPE html>';
-print '<html>';
-print '    <head>';
-print '        <link href="./css/login-styles.css" rel="stylesheet">';
-print '        <title>Login Page</title>';
-print '    </head>';
-print '    <body>';
+require_once(__DIR__ . "/classes/Page/Page.class.php");
+$login  = new Page("login");
+
+$login->addHeadElement("<link href='./css/login-styles.css' rel='stylesheet'>");
+$login->addHeadElement("<title>Login Page</title>");
+print $login->getTopSection();
 print '        <div class="box">';
 print '            <div class="navBar"></div>';
 print '            <div class="logo"></div>';
@@ -13,7 +12,8 @@ print '            <a href="index.php" class="bookmarks">Bookmarks |</a>';
 print '            <a href="index.php" class="navHome" >Home  |</a>';
 print '            <a href="form-login.php" class="navLogin">Login  |</a>';
 print '            <span class="welcomeTxt">Welcome Back, Please Login To Your Account.</span>';
-print '            <form action="action-login.php" method="POST">';
+//print '            <form action="action-login.php" method="POST">'; this is what we are actually using
+print '            <form action="bookmarks.php" method="POST">'; //this is testing
 print '                <span class="username">Username</span>';
 print '                <input type="text" id="username" name="username" class="inputUsername">';
 print '                <span class="password">Password</span>';
@@ -29,10 +29,9 @@ print '                <li>Can Add Bookmarks</li><br>';
 print '                <li>Can Delete Bookmarks</li><br>';
 print '                <li>Can Share Bookmarks</li><br>';
 print '            </ul>';
-print '            <div class="footerBack"></div>';
-print '            <footer class="footerTxt">&copy Copyright Isaac Moberg UWSP 2023</footer>;';
-print '        </div>';
-print '    </body>';
-print '</html>';
+$login->addBottomElement("<div class='footerBack'></div>");
+$login->addBottomElement("<footer class='footerTxt'>&copy Copyright Isaac Moberg UWSP 2023</footer>;");
+print $login->getBottomSection();
+
 
 ?>

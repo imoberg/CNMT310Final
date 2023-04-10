@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .box {
+    width: 100%;
+    height: 776px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .navBar {
+    width: 100%;
+    height: 66px;
+    background: url(../images/Background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .logo {
+    width: 50px;
+    height: 50px;
+    background: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    left: 27px;
+    overflow: hidden;
+  }
+  .navHome {
+    width: 79px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 24px;
+    left: 92%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1;
+    text-align: left;
+    text-decoration: none;
+  }
+  .navLogout {
+    width: 79px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 25px;
+    left: 96%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1;
+    text-align: left;
+    text-decoration: none;
+  }
+  .hiUsr {
+    width: 322px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 113px;
+    left: 93px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .navBookmarks {
+    width: 127px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 24px;
+    left: 93px;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  .btnAdd {
+    width: 155px;
+    height: 51px;
+    background: rgba(87,87,87,1);
+    opacity: 1;
+    position: absolute;
+    top: 157px;
+    left: 93px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+    color: white;
+  }
+  .btnDelete{
+    width: 155px;
+    height: 51px;
+    background: rgba(87,87,87,1);
+    opacity: 1;
+    position: absolute;
+    top: 157px;
+    left: 254px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+    color: white;
+  }
+  .v1_79 {
+    width: 55px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 171px;
+    left: 153px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v1_80 {
+    width: 76px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 171px;
+    left: 293px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v1_82 {
+    width: 465px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 305px;
+    left: 93px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v1_84 {
+    width: 322px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 113px;
+    left: 870px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v1_85 {
+    width: 465px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 165px;
+    left: 870px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .search {
+    width: 96px;
+    color: rgba(87,87,87,1);
+    position: absolute;
+    top: 227px;
+    left: 93px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: left;
+  }
+  .inputSearch {
+    width: 351px;
+    background: transparent;
+    opacity: 1;
+    position: absolute;
+    top: 281px;
+    left: 93px;
+    border: none;
+    border-bottom: 2px solid rgba(87,87,87,1);
+  }
+  .footerBack {
+    width: 100%;
+    height: 23px;
+    background: url(../images/Background.png);
+    opacity: 1;
+    position: fixed;
+    bottom: 0px;
+  }
+  .footerTxt {
+      width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+      text-align: center;
+      color: rgba(225,225,225,1);
+  }
+  
