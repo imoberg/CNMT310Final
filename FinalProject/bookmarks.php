@@ -1,5 +1,12 @@
 <?php
+require_once("autoload.php");
 require_once(__DIR__ . "/classes/Page/Page.class.php");
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) { 
+    $_SESSION['errors'][] = 'Please input a username and password';
+    die(header("Location: " . LOGIN));
+
+}
 $bookmark = new Page("Bookmarks");
 
 $bookmark->addHeadElement("<link href='./css/bookmark-styles.css' rel='stylesheet' />");
@@ -8,10 +15,10 @@ print $bookmark->getTopSection();
 print '        <div class="box">';
 print '            <div class="navBar"></div>';
 print '            <div class="logo"></div>';
-print '            <span class="navHome">Home  |</span>';
-print '            <span class="navLogout">Logout |</span>';
+print '            <a href="index.php" class="navHome" >Home  |</a>';
+print '            <a href="logout.php" class="navLogout">Logout |</a>';
 print '            <span class="hiUsr">Hi *USER* Here Are Your Bookmarks.</span>';
-print '            <span class="navBookmarks">Bookmarks |</span>';
+print '            <a href="index.php" class="navBookmarks">Bookmarks |</a>';
 print '           <button class="btnAdd">Add +</button>';
 print '           <button class="btnDelete">Delete -</button>';
 print '           </span><span class="search">Search</span>';

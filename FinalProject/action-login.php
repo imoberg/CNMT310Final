@@ -56,6 +56,7 @@ $client->setPostFields($fields);
 $returnValue = $client->send();
 
 $obj = json_decode($returnValue);
+<<<<<<< HEAD
 //possibly make a function to run this error handling
 if(!property_exists($obj,"result")){
     $_SESSION['errors'] = "Error has occured";
@@ -80,6 +81,13 @@ isset and empty if they include http/https and if we should handle that.
 
 */
 
+=======
+var_dump($obj);
+if(!property_exists($obj,"result")){
+	die(print("Error"));
+}
+
+>>>>>>> 3d40f9c2b9b156eaad8ba7cb35977045cb28a6d6
 if($obj->result == 'Success'){
   $_SESSION['loggedIn'] = true;
   $_SESSION['inputs'] = $obj;
