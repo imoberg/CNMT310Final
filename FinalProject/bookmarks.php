@@ -1,5 +1,12 @@
 <?php
+require_once("autoload.php");
 require_once(__DIR__ . "/classes/Page/Page.class.php");
+
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) { 
+    $_SESSION['errors'][] = 'Please input a username and password';
+    die(header("Location: " . LOGIN));
+
+}
 $bookmark = new Page("Bookmarks");
 
 $bookmark->addHeadElement("<link href='./css/bookmark-styles.css' rel='stylesheet' />");
