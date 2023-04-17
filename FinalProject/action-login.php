@@ -4,7 +4,6 @@ require_once("autoload.php");
 $_SESSION['loggedIn'] = false; 
 $_SESSION['errors'] = array();
 $_SESSION['inputs'] = array();
-//  __DIR__. "/../tos.php"
 require_once("WebServiceClient.php");
 require_once(__DIR__ . "/../tos.php");
 $url = "https://cnmt310.classconvo.com/bookmarks/";
@@ -14,9 +13,10 @@ $client = new WebServiceClient($url);
 //$client->setMethod("GET");
 
 //$username = "alberta";
-//$password = "K9EWw9whx";
+//$password = "";
 
 $required = array('username','password');
+
 
 foreach($required as $element) {
     if(!isset($_POST[$element]) ) {
@@ -56,7 +56,6 @@ $client->setPostFields($fields);
 $returnValue = $client->send();
 
 $obj = json_decode($returnValue);
-<<<<<<< HEAD
 //possibly make a function to run this error handling
 if(!property_exists($obj,"result")){
     $_SESSION['errors'] = "Error has occured";
@@ -81,16 +80,9 @@ isset and empty if they include http/https and if we should handle that.
 
 */
 
-=======
-var_dump($obj);
-if(!property_exists($obj,"result")){
-	die(print("Error"));
-}
-
->>>>>>> 3d40f9c2b9b156eaad8ba7cb35977045cb28a6d6
 if($obj->result == 'Success'){
   $_SESSION['loggedIn'] = true;
-  $_SESSION['inputs'] = $obj;
+  $_SESSION['inputs'] = $obj->data;
   die(header("Location: " . BOOKMARKS));  
 
 } else {
