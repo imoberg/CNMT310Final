@@ -70,7 +70,7 @@
     position: absolute;
     top: 113px;
     left: 93px;
-    font-family: Inter;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: Regular;
     font-size: 18px;
     opacity: 1;
@@ -87,6 +87,88 @@
     opacity: 1;
     text-align: left;
     text-decoration: none;
+  }
+  .errors {
+    color: red;
+    position: absolute;
+    top: 100px;
+    left: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+  }
+  .success {
+      color: green;
+      position: absolute;
+      top: 100px;
+      left: 600px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: Regular;
+      font-size: 18px;
+      opacity: 1;
+      text-align: center;
+    
+  }
+  .addTxt {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 18px;
+    top: 125px;
+    left: 600px;
+    position: absolute;
+    color:black;
+  }
+  .addURL {
+    position:absolute;
+    top:159px;
+    left: 560px;
+    color: black;
+  }
+  .addName {
+    position:absolute;
+    top:195px;
+    left: 508px;
+    color: black;
+  }
+  .addFrmURL {
+    width: 300px;
+    opacity: 1;
+    position: absolute;
+    top: 157px;
+    left: 600px;
+  }
+  .addFrmName {
+    width: 300px;
+    opacity: 1;
+    position: absolute;
+    top: 192px;
+    left: 600px;
+  }
+  .addSubmit {
+    opacity: 1;
+    position: absolute;
+    background: rgba(87,87,87,1);
+    top: 230px;
+    left: 675px;
+    color: white;
+  }
+  .addCancel {
+    opacity: 1;
+    position: absolute;
+    background: rgba(87,87,87,1);
+    top: 230px;
+    left: 750px;
+    color: white;
+  }
+  .searchSubmit {
+    opacity: 1;
+    position: absolute;
+    background: rgba(87,87,87,1);
+    top: 280px;
+    left: 450px;
+    color: white;
   }
   .btnAdd {
     width: 155px;
@@ -118,65 +200,28 @@
     overflow: hidden;
     color: white;
   }
-  .v1_79 {
-    width: 55px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 171px;
-    left: 153px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
-  }
-  .v1_80 {
-    width: 76px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 171px;
-    left: 293px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
-  }
-  .v1_82 {
+  .scrollable-ol {
     width: 465px;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    overflow: auto;
+    position: relative;
     color: rgba(0,0,0,1);
-    position: absolute;
-    top: 305px;
+    top: 300px;
     left: 93px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
+  
   }
-  .v1_84 {
-    width: 322px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 113px;
-    left: 870px;
-    font-family: Inter;
+
+  .bookmarkList {
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: Regular;
     font-size: 18px;
-    opacity: 1;
-    text-align: left;
-  }
-  .v1_85 {
-    width: 465px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 165px;
-    left: 870px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
+    color: #2B678C;
+    text-decoration-line: none;
+    text-decoration-color: black;
+
   }
   .search {
     width: 96px;
@@ -184,7 +229,7 @@
     position: absolute;
     top: 227px;
     left: 93px;
-    font-family: Inter;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: Regular;
     font-size: 18px;
     opacity: 1;
