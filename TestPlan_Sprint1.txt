@@ -1,0 +1,59 @@
+Test plan Sprint 1
+Test:                                 
+T1.) passsword field left blank 
+T2.) username field left blank 
+T3.)Both username and passowrd field left blank
+T4.) user should be able to reach bookmarks page with specified credentials.
+ 
+     T4A.) User 1
+	     Username: alberta
+	     Password: K9EWw9whx
+
+     T4B.) User 2
+	     Username: shanksm
+	     Password: 99zedzkeh
+
+     T4C.) User 3 
+	    Username: perryk
+	    Password: 9CHP9bzzz
+
+T5.) If user has logged in and is on bookmark page, but returns to login page. They should not have access to bookmarks without logging in again.
+
+T6.) After logout button has been clicked user should not be able to use back arrow to naviagate to bookmark page. 
+
+T7.) User cannot by pass login page by entering URL of bookmark page. or enter logout url and use back arrow to get to bookmark page 
+
+expected output:
+T1.) will not move past login page, once login button has been clicked -- successful
+T2.) will not move past login page, once login button has been cliecked -- successful
+T3.) will not move past login page, once login button has been cliecked -- successful
+T4.) All users should be able to access bookmark page after providing correct credentials -- successful
+
+	T4A.) User 1 will be able to access bookpage after giving correct credentials --successful
+	T4B.) User 2 will be able to access bookpage after giving correct credentials -- successful
+      T4C.) User 3 will be able to access bookpage after giving correct credentials -- successful
+
+T5.) users should not be able to return to bookmark page without logging in again -- Fail
+
+     T5A.)User 1 should not be able to return to bookmark page -- Fail
+     T5B.)User 2 should not be able to return to bookmark page -- Fail
+     T5C.)User 3 should not be able to return to bookmark page -- Fail
+
+T6.) User will be directed to login page -- Succesful
+
+    	T6A.) User 1 should be directed to login page -- Successful
+	T6B.) User 2 should be directed to login page -- Successful 
+	T6C.) User 3 should be directed to login page -- Successful
+
+T7.) User is directed to login page -- Successful
+
+
+user exprience issues:
+1.) if user enters info for password and username fields, but credntials are incorrect there is no prompt indicating they have incorrect username or password. 
+
+2.) username field show keep content so user doenst have to re-type username if login attempt is successful
+
+3.) the login link on the login page doesnt naviagte to bookmark page. login link just reloads login page
+
+4.) when you scroll down on login page content doesnt move with page 
+   -- specifically text that says "How it Works" 

@@ -64,9 +64,19 @@ if(!property_exists($obj,"result")){
 
 
 
+<<<<<<< HEAD
+=======
+$client->setPostFields($fields);
+
+will need to know the user ID which is returned when they log in 
+isset and empty if they include http/https and if we should handle that. 
+
+*/
+
+>>>>>>> 91d8d0a64ec5a97e25f4fa58b636224db3d19350
 if($obj->result == 'Success'){
   $_SESSION['loggedIn'] = true;
-  $_SESSION['inputs'] = $obj;
+  $_SESSION['inputs'] = $obj->data;
   die(header("Location: " . BOOKMARKS));  
 
 } else {
