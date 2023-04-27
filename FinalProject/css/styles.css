@@ -48,28 +48,28 @@
 	overflow: hidden;
   }
   .navHome {
-	width: 79px;
-	color: rgba(255,255,255,1);
-	position: absolute;
-	top: 24px;
-	left: 92%;
-	font-size: 20px;
-	font-family:Arial, Helvetica, sans-serif;
-	opacity: 1;
-	text-align: left;
-	text-decoration: none;
+    width: 79px;
+    color: rgba(255,255,255,1);
+    position: relative;
+    top: 24px;
+    left: 92%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1;
+    text-align: left;
+    text-decoration: none;
   }
   .navLogin {
-	width: 79px;
-	color: rgba(255,255,255,1);
-	position: absolute;
-	top: 25px;
-	left: 96%;
-	font-size: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	opacity: 1;
-	text-align: left;
-	text-decoration: none;
+    width: 79px;
+    color: rgba(255,255,255,1);
+    position: relative;
+    top: 25px;
+    left: 93%;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 1;
+    text-align: left;
+    text-decoration: none;
   }
   .welcomeTxt {
 	color: rgba(255,255,255,1);

@@ -2,7 +2,7 @@
 
 require_once("autoload.php");
 $_SESSION['loggedIn'] = false; 
-$_SESSION['errors'] = array();
+$_SESSION['results'] = array();
 $_SESSION['inputs'] = array();
 require_once("WebServiceClient.php");
 require_once(__DIR__ . "/../tos.php");
@@ -20,7 +20,7 @@ $required = array('username','password');
 
 foreach($required as $element) {
     if(!isset($_POST[$element]) ) {
-        $_SESSION['errors'][] = "Please input a username and password";
+        $_SESSION['results'][] = "Please input a username and password";
         header("Location: " . LOGIN);
         exit;
     }
@@ -28,13 +28,13 @@ foreach($required as $element) {
 
 foreach($required as $element) {
     if(empty($_POST[$element])) {
-        $_SESSION['errors'][] = "Please input a " . ucfirst($element);
+        $_SESSION['results'][] = "Please input a " . ucfirst($element);
         header("Location: " . LOGIN);
         exit;
     }    
 }
 
-if(count($_SESSION['errors']) > 0){
+if(count($_SESSION['results']) > 0){
     die(header("Location" . LOGIN)); 
 }
 
@@ -58,29 +58,19 @@ $returnValue = $client->send();
 $obj = json_decode($returnValue);
 //possibly make a function to run this error handling
 if(!property_exists($obj,"result")){
-    $_SESSION['errors'] = "Error has occured";
+    $_SESSION['results'][] = "Error has occured";
     die(header("Location: " . LOGIN));
 }
 
 
 
-<<<<<<< HEAD
-=======
-$client->setPostFields($fields);
-
-will need to know the user ID which is returned when they log in 
-isset and empty if they include http/https and if we should handle that. 
-
-*/
-
->>>>>>> 91d8d0a64ec5a97e25f4fa58b636224db3d19350
 if($obj->result == 'Success'){
   $_SESSION['loggedIn'] = true;
   $_SESSION['inputs'] = $obj->data;
   die(header("Location: " . BOOKMARKS));  
 
 } else {
-    $_SESSION['errors'][] = "Incorrect Username Or Password.";
+    $_SESSION['results'][] = "Incorrect Username Or Password.";
     die(header("Location: " . LOGIN));
 }
 //print $obj->result;

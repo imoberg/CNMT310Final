@@ -2,7 +2,7 @@
 require_once("autoload.php");
 require_once(__DIR__ . "/classes/Page/Page.class.php");
 $login  = new Page("Login Page");
-
+$login->addHeadElement('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 $login->addHeadElement("<link href='./css/login-styles.css' rel='stylesheet'>");
 $login->addHeadElement("<title>Login Page</title>");
 print $login->getTopSection();
@@ -22,11 +22,11 @@ print '            <a href="form-login.php" class="navLogin">Login  |</a>';
 print '            <span class="welcomeTxt">Welcome Back, Please Login To Your Account.</span>';
 print '            <form action="action-login.php" method="POST">';// this is what we are actually using
 //print '            <form action="bookmarks.php" method="POST">'; //this is testing
-if(isset($_SESSION['errors']) && is_array($_SESSION['errors']) && count($_SESSION['errors']) > 0){
-    foreach($_SESSION['errors'] as $field => $message) {
+if(isset($_SESSION['results']) && is_array($_SESSION['results']) && count($_SESSION['results']) > 0){
+    foreach($_SESSION['results'] as $field => $message) {
         print '<span class="errors">' . $message . '</span>';
     }
-    $_SESSION['errors'] = array();
+    $_SESSION['results'] = array();
 }
 print '                <span class="username">Username</span>';
 print '                <input type="text" id="username" name="username" class="inputUsername">';

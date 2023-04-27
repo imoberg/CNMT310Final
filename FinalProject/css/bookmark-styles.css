@@ -16,7 +16,7 @@
   }
   .navBar {
     width: 100%;
-    height: 66px;
+    height: 75px;
     background: url(../images/Background.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -43,7 +43,7 @@
   .navHome {
     width: 79px;
     color: rgba(255,255,255,1);
-    position: absolute;
+    position: relative;
     top: 24px;
     left: 92%;
     font-size: 20px;
@@ -55,9 +55,9 @@
   .navLogout {
     width: 79px;
     color: rgba(255,255,255,1);
-    position: absolute;
+    position: relative;
     top: 25px;
-    left: 96%;
+    left: 92%;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 1;
@@ -76,6 +76,19 @@
     opacity: 1;
     text-align: left;
   }
+  .popBookmarks {
+    width: 322px;
+    color: black;
+    position: absolute;
+    top: 113px;
+    right: 280px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: right;
+
+  }
   .navBookmarks {
     width: 127px;
     color: rgba(255,255,255,1);
@@ -89,7 +102,7 @@
     text-decoration: none;
   }
   .errors {
-    color: red;
+    color: #2B678C;
     position: absolute;
     top: 100px;
     left: 600px;
@@ -170,6 +183,29 @@
     left: 450px;
     color: white;
   }
+
+  .displayName {
+    color: rgba(87,87,87,1);
+    position: relative;
+    top: 300px;
+    left: 93px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 18px;
+    text-align: left;
+  }
+  .popDisplayName {
+    color: rgba(87,87,87,1);
+    position: absolute;
+    top: 200px;
+    right: 103px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 18px;
+    text-align: right;
+
+  }
+
   .btnAdd {
     width: 155px;
     height: 51px;
@@ -201,6 +237,7 @@
     color: white;
   }
   .scrollable-ol {
+    list-style-position: outside;
     width: 465px;
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
@@ -209,11 +246,29 @@
     position: relative;
     color: rgba(0,0,0,1);
     top: 300px;
-    left: 93px;
+    left: 53px;
   
   }
+  
+  .popularol {
+    list-style-position: outside;
+    width: 470px;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+    position: absolute;
+    color: black;
+    top: 230px;
+    right: 53px;
+  }
 
-  .bookmarkList {
+  li {
+    list-style-type: none;
+
+  }
+  
+
+  .bookmarkList  {
     width: 400px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: Regular;
@@ -221,6 +276,24 @@
     color: #2B678C;
     text-decoration-line: none;
     text-decoration-color: black;
+
+  }
+
+  .popbookmarkList {
+    width: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: Regular;
+    font-size: 18px;
+    color: #2B678C;
+    text-decoration-line: none;
+    text-decoration-color: black;
+
+  }
+  .bookmarkID {
+    font-family: Arial, Helvetica, sans-serif;
+    left:230px;
+    color: rgba(87,87,87,1);
+    position: absolute;
 
   }
   .search {
