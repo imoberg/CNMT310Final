@@ -1,337 +1,446 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    font-size: 14px;
-  }
-  .box {
-    width: 100%;
-    height: 776px;
-    background: rgba(255,255,255,1);
-    opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .navBar {
-    width: 100%;
-    height: 75px;
-    background: url(../images/Background.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-  }
-  .logo {
-    width: 50px;
-    height: 50px;
-    background: url(../images/logo.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: absolute;
-    top: 8px;
-    left: 27px;
-    overflow: hidden;
-  }
-  .navHome {
-    width: 79px;
-    color: rgba(255,255,255,1);
-    position: relative;
-    top: 24px;
-    left: 92%;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    opacity: 1;
-    text-align: left;
-    text-decoration: none;
-  }
-  .navLogout {
-    width: 79px;
-    color: rgba(255,255,255,1);
-    position: relative;
-    top: 25px;
-    left: 92%;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    opacity: 1;
-    text-align: left;
-    text-decoration: none;
-  }
-  .hiUsr {
-    width: 322px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 113px;
-    left: 93px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
-  }
-  .popBookmarks {
-    width: 322px;
-    color: black;
-    position: absolute;
-    top: 113px;
-    right: 280px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: right;
+  box-sizing: border-box;
+}
 
-  }
-  .navBookmarks {
-    width: 127px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 24px;
-    left: 93px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    opacity: 1;
-    text-align: left;
-    text-decoration: none;
-  }
-  .errors {
-    color: #2B678C;
-    position: absolute;
-    top: 100px;
-    left: 600px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: center;
-  }
-  .success {
-      color: green;
-      position: absolute;
-      top: 100px;
-      left: 600px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: Regular;
-      font-size: 18px;
-      opacity: 1;
-      text-align: center;
-    
-  }
-  .addTxt {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    top: 125px;
-    left: 600px;
-    position: absolute;
-    color:black;
-  }
-  .addURL {
-    position:absolute;
-    top:159px;
-    left: 560px;
-    color: black;
-  }
-  .addName {
-    position:absolute;
-    top:195px;
-    left: 508px;
-    color: black;
-  }
-  .addFrmURL {
-    width: 300px;
-    opacity: 1;
-    position: absolute;
-    top: 157px;
-    left: 600px;
-  }
-  .addFrmName {
-    width: 300px;
-    opacity: 1;
-    position: absolute;
-    top: 192px;
-    left: 600px;
-  }
-  .addSubmit {
-    opacity: 1;
-    position: absolute;
-    background: rgba(87,87,87,1);
-    top: 230px;
-    left: 675px;
-    color: white;
-  }
-  .addCancel {
-    opacity: 1;
-    position: absolute;
-    background: rgba(87,87,87,1);
-    top: 230px;
-    left: 750px;
-    color: white;
-  }
-  .searchSubmit {
-    opacity: 1;
-    position: absolute;
-    background: rgba(87,87,87,1);
-    top: 280px;
-    left: 450px;
-    color: white;
-  }
+body {
+  font-size: 14px;
+}
 
-  .displayName {
-    color: rgba(87,87,87,1);
-    position: relative;
-    top: 300px;
-    left: 93px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    text-align: left;
-  }
-  .popDisplayName {
-    color: rgba(87,87,87,1);
-    position: absolute;
-    top: 200px;
-    right: 103px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    text-align: right;
+.box {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
 
-  }
+.navBar {
+  width: 100%;
+  height: 75px;
+  background: url(../images/Background.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
 
-  .btnAdd {
-    width: 155px;
-    height: 51px;
-    background: rgba(87,87,87,1);
-    opacity: 1;
-    position: absolute;
-    top: 157px;
-    left: 93px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    overflow: hidden;
-    color: white;
-  }
-  .btnDelete{
-    width: 155px;
-    height: 51px;
-    background: rgba(87,87,87,1);
-    opacity: 1;
-    position: absolute;
-    top: 157px;
-    left: 254px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    overflow: hidden;
-    color: white;
-  }
-  .scrollable-ol {
-    list-style-position: outside;
-    width: 465px;
-    height: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    overflow: auto;
-    position: relative;
-    color: rgba(0,0,0,1);
-    top: 300px;
-    left: 53px;
-  
-  }
-  
-  .popularol {
-    list-style-position: outside;
-    width: 470px;
-    height: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: auto;
-    position: absolute;
-    color: black;
-    top: 230px;
-    right: 53px;
-  }
+.logo {
+  width: 50px;
+  height: 50px;
+  background: url(../images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 8px;
+  left: 27px;
+  overflow: hidden;
+}
 
-  li {
-    list-style-type: none;
+.navHome {
+  width: 79px;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  top: 24px;
+  left: 92%;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 1;
+  text-align: left;
+  text-decoration: none;
+}
 
-  }
-  
+.navLogout {
+  width: 79px;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+  top: 25px;
+  left: 92%;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 1;
+  text-align: left;
+  text-decoration: none;
+}
 
-  .bookmarkList  {
-    width: 400px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    color: #2B678C;
-    text-decoration-line: none;
-    text-decoration-color: black;
+.hiUsr {
+  width: 322px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 113px;
+  left: 93px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
+}
 
-  }
+.popBookmarks {
+  width: 322px;
+  color: black;
+  position: absolute;
+  top: 113px;
+  right: 280px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: right;
 
-  .popbookmarkList {
-    width: 400px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    color: #2B678C;
-    text-decoration-line: none;
-    text-decoration-color: black;
+}
 
-  }
-  .bookmarkID {
-    font-family: Arial, Helvetica, sans-serif;
-    left:230px;
-    color: rgba(87,87,87,1);
-    position: absolute;
+.navBookmarks {
+  width: 127px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 24px;
+  left: 93px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 1;
+  text-align: left;
+  text-decoration: none;
+}
 
-  }
-  .search {
-    width: 96px;
-    color: rgba(87,87,87,1);
-    position: absolute;
-    top: 227px;
-    left: 93px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: Regular;
-    font-size: 18px;
-    opacity: 1;
-    text-align: left;
-  }
-  .inputSearch {
-    width: 351px;
-    background: transparent;
-    opacity: 1;
-    position: absolute;
-    top: 281px;
-    left: 93px;
-    border: none;
-    border-bottom: 2px solid rgba(87,87,87,1);
-  }
-  .footerBack {
-    width: 100%;
-    height: 23px;
-    background: url(../images/Background.png);
-    opacity: 1;
-    position: fixed;
-    bottom: 0px;
-  }
-  .footerTxt {
-      width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-      text-align: center;
-      color: rgba(225,225,225,1);
-  }
-  
+.errors {
+  color: #2B678C;
+  position: absolute;
+  top: 100px;
+  left: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  position: absolute;
+  top: 100px;
+  left: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+
+}
+
+.addTxt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  top: 125px;
+  left: 600px;
+  position: absolute;
+  color: black;
+}
+
+.addURL {
+  position: absolute;
+  top: 159px;
+  left: 560px;
+  color: black;
+}
+
+.addName {
+  position: absolute;
+  top: 195px;
+  left: 508px;
+  color: black;
+}
+
+.addFrmURL {
+  width: 300px;
+  opacity: 1;
+  position: absolute;
+  top: 157px;
+  left: 600px;
+}
+
+.addFrmName {
+  width: 300px;
+  opacity: 1;
+  position: absolute;
+  top: 192px;
+  left: 600px;
+}
+
+.addSubmit {
+  opacity: 1;
+  position: absolute;
+  background: rgba(87, 87, 87, 1);
+  top: 230px;
+  left: 675px;
+  color: white;
+}
+
+.addCancel {
+  opacity: 1;
+  position: absolute;
+  background: rgba(87, 87, 87, 1);
+  top: 230px;
+  left: 750px;
+  color: white;
+}
+
+.searchSubmit {
+  opacity: 1;
+  position: absolute;
+  background: rgba(87, 87, 87, 1);
+  top: 280px;
+  left: 450px;
+  color: white;
+}
+
+.displayName {
+  color: rgba(87, 87, 87, 1);
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  left: 40px;
+  font-size: 18px;
+  padding-right: 70px;
+
+}
+
+.bookmarkIDS{
+  color: rgba(87, 87, 87, 1);
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  left: 80px;
+  padding-right: 70px;
+  font-size: 18px;
+}
+.visits {
+  color: rgba(87, 87, 87, 1);
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  left: 120px;
+  font-size: 18px;
+
+}
+
+.bookmarks{
+  color: rgba(87, 87, 87, 1);
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  left:235px;
+  font-size: 18px;
+  text-align: left;
+}
+
+
+.popDisplayName {
+  color: rgba(87, 87, 87, 1);
+  position: absolute;
+  top: 200px;
+  right: 103px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  text-align: right;
+
+}
+
+.btnAdd {
+  width: 155px;
+  height: 51px;
+  background: rgba(87, 87, 87, 1);
+  opacity: 1;
+  position: absolute;
+  top: 157px;
+  left: 93px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  overflow: hidden;
+  color: white;
+}
+
+.btnDelete {
+  width: 155px;
+  height: 51px;
+  background: rgba(87, 87, 87, 1);
+  opacity: 1;
+  position: absolute;
+  top: 157px;
+  left: 254px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  overflow: hidden;
+  color: white;
+}
+
+
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 450px;
+  height: auto;
+  position: absolute;
+  top:370px;
+  left:75px;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  border-bottom: 2px solid black ;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  height: 50%;
+  width: 600px;
+  padding: 6px 12px;
+  position: relative;
+  top:300px;
+  left:530px;
+  border: none;
+  border-top: none;
+}
+
+
+#ol {
+  position: relative;
+  height: 100%;
+  width: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.ui-menu-item {
+  display: none;
+}
+
+.popularol {
+  list-style-position: outside;
+  width: 470px;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  top: 230px;
+  right: 53px;
+}
+
+li {
+  list-style-type: none;
+
+}
+
+
+.bookmarkList {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  color: #2B678C;
+  text-decoration-line: none;
+  text-decoration-color: black;
+
+}
+
+.popbookmarkList {
+  width: 400px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  color: #2B678C;
+  text-decoration-line: none;
+  text-decoration-color: black;
+
+}
+
+.bookmarkID {
+  font-family: Arial, Helvetica, sans-serif;
+  left: 230px;
+  color: rgba(87, 87, 87, 1);
+  position: absolute;
+  padding-left: 75px;
+
+}
+.numbVisits {
+  font-family: Arial, Helvetica, sans-serif;
+  left: 425px;
+  color: rgba(87, 87, 87, 1);
+  position: absolute;
+  padding-left: 100px;
+
+}
+
+.search {
+  width: 96px;
+  color: rgba(87, 87, 87, 1);
+  position: absolute;
+  top: 227px;
+  left: 93px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: left;
+}
+
+.inputSearch {
+  width: 351px;
+  background: transparent;
+  opacity: 1;
+  position: absolute;
+  top: 281px;
+  left: 93px;
+  border: none;
+  border-bottom: 2px solid rgba(87, 87, 87, 1);
+}
+
+.footerBack {
+  width: 100%;
+  height: 23px;
+  background: url(../images/Background.png);
+  opacity: 1;
+  position: fixed;
+  bottom: 0px;
+}
+
+.footerTxt {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  color: rgba(225, 225, 225, 1);
+}

@@ -5,8 +5,13 @@ require_once("autoload.php");
 require_once("WebServiceClient.php");
 $url = "https://cnmt310.classconvo.com/bookmarks/";
 $client = new WebServiceClient($url);
-$required = array('BookmarkID');
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+    $_SESSION['results'][] = 'Please input a username and password';
+    die(header("Location: " . LOGIN));
 
+}
+
+$required = array('BookmarkID');
 foreach($required as $element) {
     if(!isset($_POST[$element]) || empty($_POST[$element]) || !is_numeric($_POST[$element])) {
         $_SESSION['results'][][] = "Error please input a Bookmark ID Number<br> Click delete to try again!";

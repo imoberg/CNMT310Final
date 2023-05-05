@@ -54,17 +54,10 @@
     {
         require_once(__DIR__ . "/../../../tos.php");
 
-        if (!str_contains($this->_url, "https://")) {
-            $sess['results'][] = "Error incorrect format<br> URL must have 'https//:(website here)' ";
-
+        if(count($sess['results']) > 0){
+            $sess['results'][] = "Error Has Occured";            
         }
-        if(strlen($this->_displayName) > 10){
-            $sess['results'][] = "Display Name must be between 1 and 10 characters";
-        }
-        if (count($sess['results']) > 0) {
-            $sess['results'][] = "Error Has Occured";
-        }
-
+        
         $data = array("url" => $this->_url, "displayname" => $this->_displayName, "user_id" => $this->_id);
         $action = "addbookmark";
         $fields = array(
@@ -127,7 +120,79 @@
         return $sess['results'];
     }
 #endregion
-#region "Search Bookmark"
+#region "Get Bookmark"
+    function getBookmarks($client, $sess) //pass in client and session url 
+    {
+        //will need to check if they want the bookmark to show or not.
+        require_once(__DIR__ . "/../../../tos.php");
+        $sess['bookdata'] = array();
+
+        $data = array("user_id" => $this->_id, "order_dir" => "DESC");
+        $action = "getbookmarks";
+        $fields = array(
+            "apikey" => APIKEY,
+            "apihash" => APIHASH,
+            "data" => $data,
+            "action" => $action
+        );
+        $client->setPostFields($fields);
+
+        $returnValue = $client->send();
+
+        $obj = json_decode($returnValue);
+
+        if (!property_exists($obj, "result")) {
+            $sess['results'][][] = "Error has occured"; //return this rather than redirect. try to always return an array
+            return $sess['results'];
+        }
+
+        if ($obj->result == 'Success') {
+
+            $urlList = $obj->data;
+            if (!is_array($urlList) || count($urlList) == 0) {
+                $sess['bookdata'][] = '<span class="bookmarkList">No Bookmarks Found</span>';
+            } else {
+                $sess['bookdata'][] = $urlList; 
+            }
+            return $sess['bookdata'];
+        }
+
+    } //end of function
+#endregion
+#region "Add Visit"
+    function addVisit($client, $sess)
+    {
+        require_once(__DIR__ . "/../../../tos.php");
+        $data = array("bookmark_id" => $this->_bookmarkID, "user_id" => $this->_id);
+        $action = "addvisit";
+        $fields = array(
+            "apikey" => APIKEY,
+            "apihash" => APIHASH,
+            "data" => $data,
+            "action" => $action
+        );
+        $client->setPostFields($fields);
+        $returnValue = $client->send();
+        $obj = json_decode($returnValue);
+
+        if (!property_exists($obj, "result")) {
+            $sess['results'][] = "Error has occured";
+
+        }
+        if ($obj->result == 'Success') {
+            $sess['results'][] = "Success";
+        } else {
+            $sess['results'][] = "Could Not Add Visit ";
+        }
+        return $sess['results'];
+    } //end of function
+#endregion
+} // end of class
+
+
+
+
+/*#region "Search Bookmark"
     function searchBookmark($client, $sess) {
         require_once(__DIR__ . "/../../../tos.php");
         $sess['search'] = array();
@@ -161,95 +226,4 @@
         }
         return $sess['results'];
     } //end function
-#endregion
-#region "Get Bookmark"
-    function getBookmarks($client, $sess) //pass in client and session url 
-    {
-        //will need to check if they want the bookmark to show or not.
-        require_once(__DIR__ . "/../../../tos.php");
-        $sess['bookdata'] = array();
-
-        $data = array("user_id" => $this->_id, "order_dir" => "DESC");
-        $action = "getbookmarks";
-        $fields = array(
-            "apikey" => APIKEY,
-            "apihash" => APIHASH,
-            "data" => $data,
-            "action" => $action
-        );
-        $client->setPostFields($fields);
-
-        $returnValue = $client->send();
-
-        $obj = json_decode($returnValue);
-
-        if (!property_exists($obj, "result")) {
-            $sess['results'][] = "Error has occured"; //return this rather than redirect. try to always return an array
-            return $sess['results'];
-        }
-
-        if ($obj->result == 'Success') {
-
-            $urlList = $obj->data;
-            if (!is_array($urlList) || count($urlList) == 0) {
-                $sess['bookdata'][] = '<span class="bookmarkList">No Bookmarks Found</span>';
-            } else {
-                $sess['bookdata'][] = $urlList; 
-            }
-            return $sess['bookdata'];
-        }
-        /* THIS CODE IS INLINE NOT IN ITS OWN JS PAGE CODE IS HARD TO WORK WITH
-            AS SOMEONE IS TYPING WILL BE CHANGING THE DOM ON THE FLY WILL HAVE TO RESEARCH ON IT
-            $ac = array();
-            foreach ($bookmarkList as $key => $val) {
-                $ac[$key]['id'] = $val->bookmark_id;
-                $ac[$key]['label'] = $val->displayname;
-                $ac[$key]['value'] = $val->url;
-            }
-            print "<link    rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css\">";
-            print "<script src=\"https://code.jquery.com/jquery-3.6.0.js\"></script>";
-            print "<script src=\"https://code.jquery.com/ui/1.13.2/jquery-ui.js\"></script>";
-            print "<script type=\"text/javascript\">";
-            print "  $( function() {\n";
-            print "\t\tvar bookmarks = " . json_encode($ac)  . ";\n";
-            print "\t\t$(\"#search').autocomplete({\n";
-            print "\t\t\tminLength: 0, \n";
-            print "\t\t\tsource: bookmarks,\n";
-            print "\t\t\tselect: function( event, ui ) {\n";
-            print "\t\t\t\twindow.location.href = ui.item.value;\n";
-            print "\t\t\t}\n";
-            print "\t\t});\n";
-            print "\t});\n";
-            print "</script>";
-        */ 
-    } //end of function
-#endregion
-#region "Add Visit"
-    function addVisit($client, $sess)
-    {
-        require_once(__DIR__ . "/../../../tos.php");
-        $data = array("bookmark_id" => $this->_bookmarkID, "user_id" => $this->_id);
-        $action = "addvisit";
-        $fields = array(
-            "apikey" => APIKEY,
-            "apihash" => APIHASH,
-            "data" => $data,
-            "action" => $action
-        );
-        $client->setPostFields($fields);
-        $returnValue = $client->send();
-        $obj = json_decode($returnValue);
-
-        if (!property_exists($obj, "result")) {
-            $sess['results'][] = "Error has occured";
-
-        }
-        if ($obj->result == 'Success') {
-            $sess['results'][] = "Success";
-        } else {
-            $sess['results'][] = "Could Not Add Visit ";
-        }
-        return $sess['results'];
-    } //end of function
-#endregion
-} // end of class
+#endregion*/

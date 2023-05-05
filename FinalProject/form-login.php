@@ -25,6 +25,7 @@ print '            <form action="action-login.php" method="POST">';// this is wh
 if(isset($_SESSION['results']) && is_array($_SESSION['results']) && count($_SESSION['results']) > 0){
     foreach($_SESSION['results'] as $field => $message) {
         print '<span class="errors">' . $message . '</span>';
+        print '<br>';
     }
     $_SESSION['results'] = array();
 }

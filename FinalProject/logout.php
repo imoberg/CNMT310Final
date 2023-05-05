@@ -1,6 +1,10 @@
 <?php
 require_once("autoload.php");
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+    $_SESSION['results'][] = 'Please input a username and password';
+    die(header("Location: " . LOGIN));
 
+}
 if(isset($_SESSION['loggedIn'])) {
 	$_SESSION['loggedIn'] = false;
 	unset($_SESSION['loggedIn']);
