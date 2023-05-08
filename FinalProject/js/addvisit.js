@@ -23,7 +23,6 @@ $(document).ready(function() {
 
     $(".tablinks").on("click", function(){
         var tabID = $(this).data("tab");
-
         $(".tabcontent").hide();
         $(tabID).show();
 
@@ -34,13 +33,21 @@ $(document).ready(function() {
     })
 
     $(".btnAdd").on("click", function(){
+        var funcID = $(this).data("tab");
+        console.log(funcID);
+        $(".funccontent").hide();
+        $(funcID).show()
 
         $(".btnDelete").removeClass("active");
         $(this).addClass("active");
     });
 
     $(".btnDelete").on("click", function() {
-        
+        var funcID = $(this).data("tab");
+
+        $(".funccontent").hide();
+        $(funcID).show()
+
         $(".btnAdd").removeClass("active");
         $(this).addClass("active");
     });
@@ -52,7 +59,7 @@ $(document).ready(function () {
     if($(".errors").length > 0){
         setTimeout(function() {
             $(".errors").fadeOut();
-        }, 1000);
+        }, 3000);
     }
 });
   

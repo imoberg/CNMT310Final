@@ -40,21 +40,6 @@ if (isset($_SESSION['results']) && is_array($_SESSION['results']) && count($_SES
     }
 }
 #endregion
-#region "ADD CLICK"
-if (isset($_POST['btnAdd'])) { //this if statement will run when the button "btnAdd" is click and the code below is then shown.
-    print '            <form action=add-bookmark.php method="POST">'; //this runs the add-bookmarks.php script
-    print '            <span class="addTxt">Please add a bookmark</span>';
-    print '            <span class=addURL>URL: </span>';
-    print '            <input type="text" name="URL" class="addFrmURL" value="https://"/>';
-    print '            <span class="addName">Display Name: </span>';
-    print '            <input type="text" name="displayname" class="addFrmName"/>';
-    print '            <input type="submit" class="addSubmit" name="addSubmit" value="Add +" />';
-    print '            </form>';
-    print '            <form method = "POST">';
-    print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel"/>';
-    print '            </form>';
-}
-#endregion
 #region "CANCEL ADD/DELETE"
 if (isset($_POST['addCancel'])) { //adding message when you cancel adding or deleting bookmark
     print '<span class="errors">Canceled</span>';
@@ -62,23 +47,36 @@ if (isset($_POST['addCancel'])) { //adding message when you cancel adding or del
     print '<span class="errors"> </span>';
 }
 #endregion
-#region "DELETE CLICK"
-if (isset($_POST['btnDelete'])) { //this if statement will run when the button "btnAdd" is click and the code below is then shown.
-    print '            <form action=delete-bookmarks.php method="POST">'; //this runs the delete-bookmarks.php script
-    print '            <span class="addTxt">Please delete a bookmark by ID Number</span>';
-    print '            <span class=addURL>ID: </span>';
-    print '            <input type="text" name="BookmarkID" class="addFrmURL"/>';
-    print '            <input type="submit" class="addSubmit" name="addSubmit" value="Delete -" />';
-    print '            </form>';
-    print '            <form method = "POST">';
-    print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel"/>';
-    print '            </form>';
-}
+#region "Adding and Deleting Bookmarks"
+print '           <div class= "func">';
+print '                <button class="btnAdd" name="btnAdd" data-tab="#add">Add +</button>';
+print '                <button class="btnDelete" name="btnDelete" data-tab="#delete">Delete -</button>';
+print '           </div>';
+print '           <div id="add" class= "funccontent">';
+print '            <form action=add-bookmark.php method="POST">'; //this runs the add-bookmarks.php script
+print '            <span class="addTxt">Please add a bookmark</span>';
+print '            <span class=addURL>URL: </span>';
+print '            <input type="text" name="URL" class="addFrmURL" value="https://"/>';
+print '            <span class="addName">Display Name: </span>';
+print '            <input type="text" name="displayname" class="addFrmName"/>';
+print '            <input type="submit" class="addSubmit" name="addSubmit" value="Add +" />';
+print '            </form>';
+print '            <form method = "POST">';
+print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel"/>';
+print '            </form>';
+print '           </div>';
+print '           <div id="delete" class= "funccontent">';
+print '            <form action=delete-bookmarks.php method="POST">'; //this runs the delete-bookmarks.php script
+print '            <span class="addTxt">Please delete a bookmark by ID Number</span>';
+print '            <span class=addURL>ID: </span>';
+print '            <input type="text" name="BookmarkID" class="addFrmURL"/>';
+print '            <input type="submit" class="addSubmit" name="addSubmit" value="Delete -" />';
+print '            </form>';
+print '            <form method = "POST">';
+print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel"/>';
+print '            </form>';
+print '           </div>';
 #endregion
-print '           <form method = "POST">';
-print '                <input type="submit" class="btnAdd" name="btnAdd" value="Add +"/>';
-print '                <input type="submit" class="btnDelete" name="btnDelete" value= "Delete -"/>';
-print '           </form>';
 #region "Listing Bookmarks"
 $ac = array();
 $gettingBookmark = Bookmark::create()->setID($_SESSION['inputs']->id);

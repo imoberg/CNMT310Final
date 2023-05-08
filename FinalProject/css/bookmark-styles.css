@@ -274,7 +274,7 @@ box-shadow: inset 0 0 0 0;
   background: rgba(87, 87, 87, 1);
   opacity: 1;
   position: relative;
-  top: 145px;
+  top: 20px;
   left: 93px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -285,27 +285,6 @@ box-shadow: inset 0 0 0 0;
   color: white;
 }
 
-.btnAdd:hover {
-  background-color: #ccc;
-  color: black;
-}
-
-.btnDelete:hover {
-  background-color: #ccc;
-  color: black;
-}
-
-.btnAdd.active {
-  background-color:#2B678C;
-  color:white;
-}
-
-.btnDelete.active {
-  background-color:#2B678C;
-  color:white;
-}
-
-
 
 .btnDelete {
   width: 155px;
@@ -313,7 +292,7 @@ box-shadow: inset 0 0 0 0;
   background: rgba(87, 87, 87, 1);
   opacity: 1;
   position: relative;
-  top: 145px;
+  top: 20px;
   left: 135px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -322,6 +301,28 @@ box-shadow: inset 0 0 0 0;
   overflow: hidden;
   color: white;
 }
+
+.btnAdd:hover, .btnDelete:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+
+.btnAdd.active, .btnDelete.active {
+  background-color:#2B678C;
+  color:white;
+}
+
+.func {
+  height: auto;
+  position: absolute;
+  top:147px;
+}
+
+.funccontent{
+  display:none;
+}
+
 .tablinks{
   background-color: #ccc;
   margin-bottom: 20px;
@@ -371,7 +372,7 @@ box-shadow: inset 0 0 0 0;
   width: 600px;
   padding: 6px 12px;
   position: relative;
-  top:45px;
+  top:75px;
   left:1200px;
   border: none;
   border-top: none;
