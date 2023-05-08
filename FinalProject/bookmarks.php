@@ -21,7 +21,7 @@ $bookmark->addHeadElement('<script src="https://code.jquery.com/ui/1.13.2/jquery
 $bookmark->addHeadElement("<script src='./js/addvisit.js'></script>");
 $bookmark->addHeadElement("<title>Bookmarks</title>");
 print $bookmark->getTopSection();
-print '        <div class="box">';
+print '<div class="box">';
 print '            <div class="navBar"></div>';
 print '            <div class="logo"></div>';
 print '            <a href="index.php" class="navHome" >Home  |</a>';
@@ -33,11 +33,11 @@ print '            <a href="index.php" class="navBookmarks">Bookmarks |</a>';
 //this is for any errors that may have occured while trying to add or delete a bookmark
 if (isset($_SESSION['results']) && is_array($_SESSION['results']) && count($_SESSION['results']) > 0) {
     foreach ($_SESSION['results'] as $result) {
-        foreach($result as $message) {
+        foreach ($result as $message) {
             print '<span class="errors">' . $message . '</span><br>';
         }
+        $_SESSION['results'] = array();
     }
-    $_SESSION['results'] = array();
 }
 #endregion
 #region "ADD CLICK"
@@ -79,36 +79,29 @@ print '           <form method = "POST">';
 print '                <input type="submit" class="btnAdd" name="btnAdd" value="Add +"/>';
 print '                <input type="submit" class="btnDelete" name="btnDelete" value= "Delete -"/>';
 print '           </form>';
-print '           <form method="POST">';
-print '                <span class="search">Search</span>';
-print '                <input type="text" id="search-input" name="search" class="inputSearch" placeholder="Search bookmarks...">';
-print '           </form>';
-
 #region "Listing Bookmarks"
 $ac = array();
 $gettingBookmark = Bookmark::create()->setID($_SESSION['inputs']->id);
 $returnValue = $gettingBookmark->getBookmarks($client, $_SESSION);
-if(isset($returnValue) || !empty($returnValue)){
-    foreach($returnValue as $bookmarks){
-        foreach($bookmarks as $key => $element){
+if (isset($returnValue) || !empty($returnValue)) {
+    foreach ($returnValue as $bookmarks) {
+        foreach ($bookmarks as $key => $element) {
+            //adding the bookmarks to the AutoComplete Array
             $ac[$key]['id'] = $element->bookmark_id;
             $ac[$key]['label'] = $element->displayname;
             $ac[$key]['value'] = $element->url;
             $ac[$key]['numberVisits'] = $element->visits;
         }
     }
-     
 }
-
 //sorting the array by number of visits
-usort($ac, function($i, $j) {
+usort($ac, function ($i, $j) {
     return $j['numberVisits'] - $i['numberVisits'];
 });
 $listItems = '';
-
 if (isset($ac) && !empty($ac)) {
     foreach ($ac as $key => $bookmarks) {
-        if($bookmarks["numberVisits"] >= 10){
+        if ($bookmarks["numberVisits"] >= 10) {
             $popBookmarks[] = $bookmarks;
         }
         $listItems .= '<li id="li"><a class="bookmarkList" href="' . $bookmarks["value"] . '"id="' . $bookmarks["id"] . '" target="_blank"">' . $bookmarks["label"] . '</a><span class="bookmarkID">ID:' . $bookmarks["id"] . '</span><span class="numbVisits">' . $bookmarks["numberVisits"] . '</span></li>';
@@ -118,45 +111,49 @@ if (isset($ac) && !empty($ac)) {
     $listItems = '<span class="bookmarkList">You Don\'t have any bookmarks!</span>';
 }
 #endregion
-print '<div class ="tab">';
-print '<button class="tablinks" id="listBookmark" data-tab="#bookmarks" >Bookmarks </button>';
-print '<button class="tablinks" id="popBookmakrs" data-tab="#popularBookmarks">Popular Bookmarks</button>';
-print '</div>';
-print '<div id="bookmarks" class="tabcontent">';
-print '           <span class="bookmarks">All Bookmarks</span><br><br>';
-print '           <span class="displayName">Display Name    |</span>';
-print '           <span class="bookmarkIDS">Bookmark ID   |</span>';
-print '           <span class="visits">Visits  |</span>';
-print '           <ol id="ol">';
+#region Tab Functionality"
+print '         <div class ="tab">';
+print '             <button class="tablinks active" id="listBookmark" data-tab="#bookmarks" >Bookmarks </button>';
+print '             <button class="tablinks" id="popBookmakrs" data-tab="#popularBookmarks">Popular Bookmarks</button>';
+print '         </div>';
+print '         <div id="bookmarks" class="tabcontent">';
+print '             <span class="bookmarks">All Bookmarks</span><br><br>';
+print '             <input type="text" id="search-input" name="search" class="inputSearch" placeholder="Search bookmarks...">';
+print '             <span class="displayName">Display Name    |</span>';
+print '             <span class="bookmarkIDS">Bookmark ID   |</span>';
+print '             <span class="visits">Visits  |</span>';
+print '             <ol id="ol">';
 print               $listItems;
-print '           </ol>';
-print '</div>';
+print '             </ol>';
+print '         </div>';
 $popItems = '';
-#region "Listing Popular Bookmarks"
-if(!isset($popBookmarks) || empty($popBookmarks)){
-    $popItems = '<span class="bookmarkList">No Popular Bookmarks Yet!</span>';;
+if (!isset($popBookmarks) || empty($popBookmarks)) {
+    $popItems = '<span class="bookmarkList">No Popular Bookmarks Yet!</span>';
+    ;
 }
 if (isset($popBookmarks) || !empty($popBookmarks)) {
-    usort($popBookmarks, function( $i, $j){
+    usort($popBookmarks, function ($i, $j) {
         return $j['numberVisits'] - $i['numberVisits'];
     });
     foreach ($popBookmarks as $bookmarks) {
         $popItems .= '<li id="li"><a class="bookmarkList" href="' . $bookmarks["value"] . '"id="' . $bookmarks["id"] . '" target="_blank"">' . $bookmarks["label"] . '</a><span class="bookmarkID">ID:' . $bookmarks["id"] . '</span><span class="numbVisits">' . $bookmarks["numberVisits"] . '</span></li>';
         $popItems .= '<li>________________________________________________________________________________________________</li><br><br>';
-    
+
     }
 }
-#endregion
-print '<div id="popularBookmarks" class="tabcontent">';
-print '           <span class="bookmarks">Popular Bookmarks</span><br><br>';
-print '           <span class="displayName">Display Name    |</span>';
-print '           <span class="bookmarkIDS">Bookmark ID   |</span>';
-print '           <span class="visits">Visits  |</span>';
-print '     <ol id="ol">';
-print       $popItems;
-print '     </ol>';
-print '</div>';
+print '         <div id="popularBookmarks" class="tabcontent">';
+print '             <span class="bookmarks">Popular Bookmarks</span><br><br>';
+print '             <input type="text" id="search-pop" name="search" class="inputSearch" placeholder="Search bookmarks...">';
+print '             <span class="displayName">Display Name    |</span>';
+print '             <span class="bookmarkIDS">Bookmark ID   |</span>';
+print '             <span class="visits">Visits  |</span>';
+print '             <ol id="ol-pop">';
+print               $popItems;
+print '             </ol>';
 print '         </div>';
+#endregion
+print '</div>';
+#region AutoComplete JS"
 print "<script type=\"text/javascript\">
   $(function() {
     var originalList = $('#ol').html();
@@ -185,12 +182,35 @@ print "<script type=\"text/javascript\">
     });
   });
 
+  $(function() {
+    var originalList = $('#ol-pop').html();
+    $(\"#search-pop\").on('keyup', function() {
+        var inputVal = $(this).val();
+        if(inputVal === '') {
+            $('#ol-pop').html(originalList);
+            return;
+        }
+         $(this).autocomplete({
+            source: " . json_encode($popBookmarks) . ",
+            minLength: 1,
+            response: function(event, ui) {
+            var listItems = '';
+            if (ui.content.length === 0) {
 
-
+            } else {
+                $.each(ui.content, function(index, item) {
+                    listItems += '<li id=\"li\"><a class=\"bookmarkList\" href=\"' + item.value + '\"id=\"' + item.id + '\" target=\"_blank\">' + item.label + '</a><span class=\"bookmarkID\">ID:' + item.id + '</span><span class=\"numbVisits\">' + item.numberVisits + '</span></li>';
+                    listItems += '<li>________________________________________________________________________________________________</li><br><br>';
+                });
+                $('#ol-pop').html(listItems);
+            } 
+        }
+      });
+    });
+  });
 </script>";
-
-
+#endregion
 $bookmark->addBottomElement("<div class='footerBack'></div>");
-$bookmark->addBottomElement("<footer class='footerTxt'>&copy Copyright Isaac Moberg UWSP 2023</footer>;");
+$bookmark->addBottomElement("<footer class='footerTxt'>&copy Copyright Isaac Moberg UWSP 2023</footer>");
 print $bookmark->getBottomSection();
 ?>

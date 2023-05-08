@@ -65,18 +65,30 @@ body {
     opacity: 1;
     text-align: left;
     text-decoration: none;
+	transition: ease-out 0.3s;
+	box-shadow: inset 0 0 0 0;
   }
+
+  .navHome:hover, .navLogin:hover {
+	box-shadow: inset 79px 0 0 0 #00ACEA;
+	cursor: pointer;
+	color: white;
+  }
+
+
   .navLogin {
     width: 79px;
     color: rgba(255,255,255,1);
     position: relative;
     top: 25px;
-    left: 93%;
+    left: 92%;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 1;
     text-align: left;
     text-decoration: none;
+	transition: ease-out 0.3s;
+	box-shadow: inset 0 0 0 0;
   }
 .welcomeTxt {
   width: 405px;
@@ -151,7 +163,7 @@ body {
 }
 
 .submit {
-  color: rgba(225,225,225,1);
+  color: white;
   font-size: 18px;
   width: 155px;
   height: 51px;
@@ -165,6 +177,15 @@ body {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   overflow: hidden;
+  transition: 0.5s;
+}
+
+.submit:hover {
+  background: transparent;
+  border: 2px solid #2B678C;
+  color: #2B678C;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
 .workBack {

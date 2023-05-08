@@ -47,7 +47,7 @@ body {
 
 .navHome {
   width: 79px;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255,255,255,1);
   position: relative;
   top: 24px;
   left: 92%;
@@ -56,11 +56,20 @@ body {
   opacity: 1;
   text-align: left;
   text-decoration: none;
+transition: ease-out 0.3s;
+box-shadow: inset 0 0 0 0;
 }
+
+.navHome:hover, .navLogout:hover {
+box-shadow: inset 79px 0 0 0 #00ACEA;
+cursor: pointer;
+color: white;
+}
+
 
 .navLogout {
   width: 79px;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255,255,255,1);
   position: relative;
   top: 25px;
   left: 92%;
@@ -69,10 +78,12 @@ body {
   opacity: 1;
   text-align: left;
   text-decoration: none;
+transition: ease-out 0.3s;
+box-shadow: inset 0 0 0 0;
 }
 
 .hiUsr {
-  width: 322px;
+  width: 400px;
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 113px;
@@ -114,49 +125,38 @@ body {
 .errors {
   color: #2B678C;
   position: absolute;
-  top: 100px;
-  left: 600px;
+  top: 250px;
+  left: 94px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  display: inline;
 }
 
-.success {
-  color: green;
-  position: absolute;
-  top: 100px;
-  left: 600px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-
-}
 
 .addTxt {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
   font-size: 18px;
-  top: 125px;
-  left: 600px;
+  top: 250px;
+  left: 94px;
   position: absolute;
   color: black;
 }
 
 .addURL {
   position: absolute;
-  top: 159px;
-  left: 560px;
+  top: 300px;
+  left: 94px;
   color: black;
 }
 
 .addName {
   position: absolute;
-  top: 195px;
-  left: 508px;
+  top: 350px;
+  left: 94px;
   color: black;
 }
 
@@ -164,34 +164,43 @@ body {
   width: 300px;
   opacity: 1;
   position: absolute;
-  top: 157px;
-  left: 600px;
+  top: 297px;
+  left: 140px;
 }
 
 .addFrmName {
-  width: 300px;
+  width: 255px;
   opacity: 1;
   position: absolute;
-  top: 192px;
-  left: 600px;
+  top: 347px;
+  left: 185px;
 }
 
 .addSubmit {
   opacity: 1;
   position: absolute;
   background: rgba(87, 87, 87, 1);
-  top: 230px;
-  left: 675px;
+  top: 400px;
+  left: 200px;
   color: white;
+  transition: 0.5s;
+}
+
+.addSubmit:hover, .addCancel:hover {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid rgba(87, 87, 87, 1);
+  color:  rgba(87, 87, 87, 1);
 }
 
 .addCancel {
   opacity: 1;
   position: absolute;
   background: rgba(87, 87, 87, 1);
-  top: 230px;
-  left: 750px;
+  top: 400px;
+  left: 300px;
   color: white;
+  transition: 0.5s;
 }
 
 .searchSubmit {
@@ -208,6 +217,7 @@ body {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
+  top:30px;
   left: 40px;
   font-size: 18px;
   padding-right: 70px;
@@ -219,7 +229,8 @@ body {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
-  left: 80px;
+  top:30px;
+  left: 75px;
   padding-right: 70px;
   font-size: 18px;
 }
@@ -228,6 +239,7 @@ body {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
+  top:30px;
   left: 120px;
   font-size: 18px;
 
@@ -238,7 +250,7 @@ body {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
-  left:235px;
+  left:265px;
   font-size: 18px;
   text-align: left;
 }
@@ -261,47 +273,73 @@ body {
   height: 51px;
   background: rgba(87, 87, 87, 1);
   opacity: 1;
-  position: absolute;
-  top: 157px;
+  position: relative;
+  top: 145px;
   left: 93px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding-right: 5px;
   overflow: hidden;
   color: white;
 }
+
+.btnAdd:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+.btnDelete:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+.btnAdd.active {
+  background-color:#2B678C;
+  color:white;
+}
+
+.btnDelete.active {
+  background-color:#2B678C;
+  color:white;
+}
+
+
 
 .btnDelete {
   width: 155px;
   height: 51px;
   background: rgba(87, 87, 87, 1);
   opacity: 1;
-  position: absolute;
-  top: 157px;
-  left: 254px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  position: relative;
+  top: 145px;
+  left: 135px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   overflow: hidden;
   color: white;
 }
-
+.tablinks{
+  background-color: #ccc;
+  margin-bottom: 20px;
+  
+}
 
 .tab {
   float: left;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: none;
   width: 450px;
   height: auto;
   position: absolute;
-  top:370px;
-  left:75px;
+  top:155px;
+  left:700px;
 }
 
 .tab button {
-  background-color: inherit;
+  background-color: #ddd;;
   float: left;
   color: black;
   padding: 22px 16px;
@@ -311,14 +349,20 @@ body {
   cursor: pointer;
   transition: 0.3s;
   border: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   border-bottom: 2px solid black ;
 }
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #ccc;
+
 }
 
 .tab button.active {
-  background-color: #ccc;
+  background-color:#2B678C;
+  color:white;
 }
 
 .tabcontent {
@@ -327,8 +371,8 @@ body {
   width: 600px;
   padding: 6px 12px;
   position: relative;
-  top:300px;
-  left:530px;
+  top:45px;
+  left:1200px;
   border: none;
   border-top: none;
 }
@@ -338,6 +382,16 @@ body {
   position: relative;
   height: 100%;
   width: 600px;
+  top: 40px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#ol-pop {
+  position: relative;
+  height: 100%;
+  width: 600px;
+  top: 40px;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -388,7 +442,7 @@ li {
 
 .bookmarkID {
   font-family: Arial, Helvetica, sans-serif;
-  left: 230px;
+  left: 225px;
   color: rgba(87, 87, 87, 1);
   position: absolute;
   padding-left: 75px;
@@ -403,26 +457,13 @@ li {
 
 }
 
-.search {
-  width: 96px;
-  color: rgba(87, 87, 87, 1);
-  position: absolute;
-  top: 227px;
-  left: 93px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: left;
-}
 
 .inputSearch {
-  width: 351px;
+  width: 550px;
+  left: 51px;
   background: transparent;
   opacity: 1;
   position: absolute;
-  top: 281px;
-  left: 93px;
   border: none;
   border-bottom: 2px solid rgba(87, 87, 87, 1);
 }

@@ -19,7 +19,7 @@ $( document).ready(function() {
 
 $(document).ready(function() {
     $("#bookmarks").show();
-    $(".tablinks[data-tab='bookmarks']").addClass("active");
+    $("#listBookmarks").addClass("active");
 
     $(".tablinks").on("click", function(){
         var tabID = $(this).data("tab");
@@ -33,18 +33,26 @@ $(document).ready(function() {
         
     })
 
+    $(".btnAdd").on("click", function(){
+
+        $(".btnDelete").removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(".btnDelete").on("click", function() {
+        
+        $(".btnAdd").removeClass("active");
+        $(this).addClass("active");
+    });
+
+});
+
+$(document).ready(function () {
+
+    if($(".errors").length > 0){
+        setTimeout(function() {
+            $(".errors").fadeOut();
+        }, 1000);
+    }
 });
   
-// $( document).ready(function() {
-//     $(".tablinks").on("click", function() {
-//         alert("clicked");
-//         var type = $(this).attr("id");
-//         $(".tabcontent").hide();
-//         $("#" + type ).show();
-
-//         $(".tablinks").removeClass("active");
-//         $(this).addClass("active");
-        
-        
-//     })
-// });
