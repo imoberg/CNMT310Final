@@ -47,7 +47,7 @@ body {
 
 .navHome {
   width: 79px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   position: relative;
   top: 24px;
   left: 92%;
@@ -56,20 +56,21 @@ body {
   opacity: 1;
   text-align: left;
   text-decoration: none;
-transition: ease-out 0.3s;
-box-shadow: inset 0 0 0 0;
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0;
 }
 
-.navHome:hover, .navLogout:hover {
-box-shadow: inset 79px 0 0 0 #00ACEA;
-cursor: pointer;
-color: white;
+.navHome:hover,
+.navLogout:hover {
+  box-shadow: inset 79px 0 0 0 #00ACEA;
+  cursor: pointer;
+  color: white;
 }
 
 
 .navLogout {
   width: 79px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   position: relative;
   top: 25px;
   left: 92%;
@@ -78,8 +79,8 @@ color: white;
   opacity: 1;
   text-align: left;
   text-decoration: none;
-transition: ease-out 0.3s;
-box-shadow: inset 0 0 0 0;
+  transition: ease-out 0.3s;
+  box-shadow: inset 0 0 0 0;
 }
 
 .hiUsr {
@@ -186,11 +187,12 @@ box-shadow: inset 0 0 0 0;
   transition: 0.5s;
 }
 
-.addSubmit:hover, .addCancel:hover {
+.addSubmit:hover,
+.addCancel:hover {
   cursor: pointer;
   background: transparent;
   border: 2px solid rgba(87, 87, 87, 1);
-  color:  rgba(87, 87, 87, 1);
+  color: rgba(87, 87, 87, 1);
 }
 
 .addCancel {
@@ -217,42 +219,54 @@ box-shadow: inset 0 0 0 0;
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
-  top:30px;
+  top: 30px;
   left: 40px;
   font-size: 18px;
   padding-right: 70px;
 
 }
 
-.bookmarkIDS{
+.bookmarkIDS {
   color: rgba(87, 87, 87, 1);
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
-  top:30px;
+  top: 30px;
   left: 75px;
   padding-right: 70px;
   font-size: 18px;
 }
+
 .visits {
   color: rgba(87, 87, 87, 1);
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
-  top:30px;
+  top: 30px;
   left: 120px;
   font-size: 18px;
 
 }
 
-.bookmarks{
-  color: rgba(87, 87, 87, 1);
+.bookmarks {
+  color: black;
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: Regular;
-  left:265px;
+  left: 265px;
   font-size: 18px;
   text-align: left;
+}
+
+.pickView {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: Regular;
+  font-size: 18px;
+  position: relative;
+  left: 165px;
+  bottom: 50px;
+  text-align: center;
 }
 
 
@@ -302,31 +316,33 @@ box-shadow: inset 0 0 0 0;
   color: white;
 }
 
-.btnAdd:hover, .btnDelete:hover {
+.btnAdd:hover,
+.btnDelete:hover {
   background-color: #ccc;
   color: black;
 }
 
 
-.btnAdd.active, .btnDelete.active {
-  background-color:#2B678C;
-  color:white;
+.btnAdd.active,
+.btnDelete.active {
+  background-color: #2B678C;
+  color: white;
 }
 
 .func {
   height: auto;
   position: absolute;
-  top:147px;
+  top: 147px;
 }
 
-.funccontent{
-  display:none;
+.funccontent {
+  display: none;
 }
 
-.tablinks{
+.tablinks {
   background-color: #ccc;
   margin-bottom: 20px;
-  
+
 }
 
 .tab {
@@ -335,12 +351,13 @@ box-shadow: inset 0 0 0 0;
   width: 450px;
   height: auto;
   position: absolute;
-  top:155px;
-  left:700px;
+  top: 155px;
+  left: 1300px;
 }
 
 .tab button {
-  background-color: #ddd;;
+  background-color: #ddd;
+  ;
   float: left;
   color: black;
   padding: 22px 16px;
@@ -354,16 +371,17 @@ box-shadow: inset 0 0 0 0;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border-bottom: 2px solid black ;
+  border-bottom: 2px solid black;
 }
+
 .tab button:hover {
   background-color: #ccc;
 
 }
 
 .tab button.active {
-  background-color:#2B678C;
-  color:white;
+  background-color: #2B678C;
+  color: white;
 }
 
 .tabcontent {
@@ -372,8 +390,8 @@ box-shadow: inset 0 0 0 0;
   width: 600px;
   padding: 6px 12px;
   position: relative;
-  top:75px;
-  left:1200px;
+  top: 75px;
+  left: 550px;
   border: none;
   border-top: none;
 }
@@ -449,6 +467,7 @@ li {
   padding-left: 75px;
 
 }
+
 .numbVisits {
   font-family: Arial, Helvetica, sans-serif;
   left: 425px;

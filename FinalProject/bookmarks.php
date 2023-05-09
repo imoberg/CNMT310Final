@@ -111,6 +111,7 @@ if (isset($ac) && !empty($ac)) {
 #endregion
 #region Tab Functionality"
 print '         <div class ="tab">';
+print '             <span class="pickView">Pick Your View</span><br>';
 print '             <button class="tablinks active" id="listBookmark" data-tab="#bookmarks" >Bookmarks </button>';
 print '             <button class="tablinks" id="popBookmakrs" data-tab="#popularBookmarks">Popular Bookmarks</button>';
 print '         </div>';
@@ -121,7 +122,7 @@ print '             <span class="displayName">Display Name    |</span>';
 print '             <span class="bookmarkIDS">Bookmark ID   |</span>';
 print '             <span class="visits">Visits  |</span>';
 print '             <ol id="ol">';
-print               $listItems;
+print $listItems;
 print '             </ol>';
 print '         </div>';
 $popItems = '';
@@ -146,7 +147,7 @@ print '             <span class="displayName">Display Name    |</span>';
 print '             <span class="bookmarkIDS">Bookmark ID   |</span>';
 print '             <span class="visits">Visits  |</span>';
 print '             <ol id="ol-pop">';
-print               $popItems;
+print $popItems;
 print '             </ol>';
 print '         </div>';
 #endregion
@@ -211,4 +212,6 @@ print "<script type=\"text/javascript\">
 $bookmark->addBottomElement("<div class='footerBack'></div>");
 $bookmark->addBottomElement("<footer class='footerTxt'>&copy Copyright Isaac Moberg UWSP 2023</footer>");
 print $bookmark->getBottomSection();
+
+
 ?>
