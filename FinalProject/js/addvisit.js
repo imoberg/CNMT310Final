@@ -2,10 +2,17 @@
 $( document).ready(function() {
     $("ol").on("click", ".bookmarkList", function(){
         var bookmarkID = $(this).attr("id");
+        var cleanBookmarkID = "";
+        if(bookmarkID.includes('m_')){
+            var cleanBookmarkID = bookmarkID.replace('m_', '');
+        } else {
+            var cleanBookmarkID = bookmarkID.replace('p_', '');
+        }
+
         $.ajax({
             url: 'add-visit.php',
             type: 'POST',
-            data: {bookmarkID: bookmarkID},
+            data: {bookmarkID: cleanBookmarkID},
             success: function(response) {
                 $("body").html(response);
             },

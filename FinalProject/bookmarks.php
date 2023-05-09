@@ -15,11 +15,10 @@ $popBookmarks = array();
 
 $bookmark = new Page("Bookmarks");
 $bookmark->addHeadElement('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-$bookmark->addHeadElement("<link href='./css/bookmark-styles.css' rel='stylesheet' />");
+$bookmark->addHeadElement("<link href='./css/bookmark-styles.css' rel='stylesheet' >");
 $bookmark->addHeadElement('  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>');
 $bookmark->addHeadElement('<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>');
 $bookmark->addHeadElement("<script src='./js/addvisit.js'></script>");
-$bookmark->addHeadElement("<title>Bookmarks</title>");
 print $bookmark->getTopSection();
 print '<div class="box">';
 print '            <div class="navBar"></div>';
@@ -56,24 +55,24 @@ print '           <div id="add" class= "funccontent">';
 print '            <form action=add-bookmark.php method="POST">'; //this runs the add-bookmarks.php script
 print '            <span class="addTxt">Please add a bookmark</span>';
 print '            <span class=addURL>URL: </span>';
-print '            <input type="text" name="URL" class="addFrmURL" value="https://"/>';
+print '            <input type="text" name="URL" class="addFrmURL" value="https://">';
 print '            <span class="addName">Display Name: </span>';
-print '            <input type="text" name="displayname" class="addFrmName"/>';
-print '            <input type="submit" class="addSubmit" name="addSubmit" value="Add +" />';
+print '            <input type="text" name="displayname" class="addFrmName">';
+print '            <input type="submit" class="addSubmit" name="addSubmit" value="Add +" >';
 print '            </form>';
 print '            <form method = "POST">';
-print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel"/>';
+print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel">';
 print '            </form>';
 print '           </div>';
 print '           <div id="delete" class= "funccontent">';
 print '            <form action=delete-bookmarks.php method="POST">'; //this runs the delete-bookmarks.php script
 print '            <span class="addTxt">Please delete a bookmark by ID Number</span>';
 print '            <span class=addURL>ID: </span>';
-print '            <input type="text" name="BookmarkID" class="addFrmURL"/>';
-print '            <input type="submit" class="addSubmit" name="addSubmit" value="Delete -" />';
+print '            <input type="text" name="BookmarkID" class="addFrmURL">';
+print '            <input type="submit" class="addSubmit" name="addSubmit" value="Delete -" >';
 print '            </form>';
 print '            <form method = "POST">';
-print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel"/>';
+print '            <input type="submit" class="addCancel" name="addCancel" value="Cancel">';
 print '            </form>';
 print '           </div>';
 #endregion
@@ -102,8 +101,8 @@ if (isset($ac) && !empty($ac)) {
         if ($bookmarks["numberVisits"] >= 10) {
             $popBookmarks[] = $bookmarks;
         }
-        $listItems .= '<li id="li"><a class="bookmarkList" href="' . $bookmarks["value"] . '"id="' . $bookmarks["id"] . '" target="_blank"">' . $bookmarks["label"] . '</a><span class="bookmarkID">ID:' . $bookmarks["id"] . '</span><span class="numbVisits">' . $bookmarks["numberVisits"] . '</span></li>';
-        $listItems .= '<li>________________________________________________________________________________________________</li><br><br>';
+        $listItems .= '<li><a class="bookmarkList" href="' . $bookmarks["value"] . '" id="m_' . $bookmarks["id"] . '" target="_blank">' . $bookmarks["label"] . '</a><span class="bookmarkID">ID:' . $bookmarks["id"] . '</span><span class="numbVisits">' . $bookmarks["numberVisits"] . '</span></li>';
+        $listItems .= '<li>________________________________________________________________________________________________</li>';
     }
 } else {
     $listItems = '<span class="bookmarkList">You Don\'t have any bookmarks!</span>';
@@ -135,8 +134,8 @@ if (isset($popBookmarks) || !empty($popBookmarks)) {
         return $j['numberVisits'] - $i['numberVisits'];
     });
     foreach ($popBookmarks as $bookmarks) {
-        $popItems .= '<li id="li"><a class="bookmarkList" href="' . $bookmarks["value"] . '"id="' . $bookmarks["id"] . '" target="_blank"">' . $bookmarks["label"] . '</a><span class="bookmarkID">ID:' . $bookmarks["id"] . '</span><span class="numbVisits">' . $bookmarks["numberVisits"] . '</span></li>';
-        $popItems .= '<li>________________________________________________________________________________________________</li><br><br>';
+        $popItems .= '<li><a class="bookmarkList" href="' . $bookmarks["value"] . '" id="p_' . $bookmarks["id"] . '" target="_blank">' . $bookmarks["label"] . '</a><span class="bookmarkID">ID:' . $bookmarks["id"] . '</span><span class="numbVisits">' . $bookmarks["numberVisits"] . '</span></li>';
+        $popItems .= '<li>________________________________________________________________________________________________</li>';
 
     }
 }
@@ -153,7 +152,7 @@ print '         </div>';
 #endregion
 print '</div>';
 #region AutoComplete JS"
-print "<script type=\"text/javascript\">
+print "<script>
   $(function() {
     var originalList = $('#ol').html();
     $(\"#search-input\").on('keyup', function() {
@@ -171,8 +170,8 @@ print "<script type=\"text/javascript\">
 
             } else {
                 $.each(ui.content, function(index, item) {
-                    listItems += '<li id=\"li\"><a class=\"bookmarkList\" href=\"' + item.value + '\"id=\"' + item.id + '\" target=\"_blank\">' + item.label + '</a><span class=\"bookmarkID\">ID:' + item.id + '</span><span class=\"numbVisits\">' + item.numberVisits + '</span></li>';
-                    listItems += '<li>________________________________________________________________________________________________</li><br><br>';
+                    listItems += '<li><a class=\"bookmarkList\" href=\"' + item.value + '\" id=\"' + item.id + '\" target=\"_blank\">' + item.label + '</a><span class=\"bookmarkID\">ID:' + item.id + '</span><span class=\"numbVisits\">' + item.numberVisits + '</span></li>';
+                    listItems += '<li>________________________________________________________________________________________________</li>';
                 });
                 $('#ol').html(listItems);
             } 
@@ -198,8 +197,8 @@ print "<script type=\"text/javascript\">
 
             } else {
                 $.each(ui.content, function(index, item) {
-                    listItems += '<li id=\"li\"><a class=\"bookmarkList\" href=\"' + item.value + '\"id=\"' + item.id + '\" target=\"_blank\">' + item.label + '</a><span class=\"bookmarkID\">ID:' + item.id + '</span><span class=\"numbVisits\">' + item.numberVisits + '</span></li>';
-                    listItems += '<li>________________________________________________________________________________________________</li><br><br>';
+                    listItems += '<li><a class=\"bookmarkList\" href=\"' + item.value + '\" id=\"' + item.id + '\" target=\"_blank\">' + item.label + '</a><span class=\"bookmarkID\">ID:' + item.id + '</span><span class=\"numbVisits\">' + item.numberVisits + '</span></li>';
+                    listItems += '<li>________________________________________________________________________________________________</li>';
                 });
                 $('#ol-pop').html(listItems);
             } 
@@ -210,7 +209,7 @@ print "<script type=\"text/javascript\">
 </script>";
 #endregion
 $bookmark->addBottomElement("<div class='footerBack'></div>");
-$bookmark->addBottomElement("<footer class='footerTxt'>&copy Copyright Isaac Moberg UWSP 2023</footer>");
+$bookmark->addBottomElement("<footer class='footerTxt'>&copy; Copyright Isaac Moberg UWSP 2023</footer>");
 print $bookmark->getBottomSection();
 
 

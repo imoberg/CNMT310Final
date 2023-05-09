@@ -433,7 +433,7 @@ body {
 
 li {
   list-style-type: none;
-
+  margin-bottom: 20px;
 }
 
 
@@ -445,6 +445,8 @@ li {
   color: #2B678C;
   text-decoration-line: none;
   text-decoration-color: black;
+  margin-bottom: 50px;
+  margin-top: 50px;
 
 }
 

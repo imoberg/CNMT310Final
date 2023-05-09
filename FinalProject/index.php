@@ -4,8 +4,7 @@ require_once(__DIR__ . "/classes/Page/Page.class.php" );
 $index = new Page("Home");
 
 $index->addHeadElement('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-$index->addHeadElement("<link href='./css/styles.css' rel='stylesheet'/>");
-$index->addHeadElement("<title>Bookmarks Page</title>");
+$index->addHeadElement("<link href='./css/styles.css' rel='stylesheet'>");
 print $index->getTopSection();
 print '        <div class="divBox">';
 print '            <div class="logo">';
@@ -25,8 +24,8 @@ if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true){
 }
 print '            <div class="navLine"></div>';
 print '            <h2 class="welcomeTxt">Welcome!</h2>';
-
+print ' </div>';
 $index->addBottomElement("<div class='footLine'></div>");
-$index->addBottomElement("<footer class='footerTxt'>&copy Copyright Isaac Moberg UWSP 2023</footer>");
+$index->addBottomElement("<footer class='footerTxt'>&copy; Copyright Isaac Moberg UWSP 2023</footer>");
 print $index->getBottomSection();
 ?>
