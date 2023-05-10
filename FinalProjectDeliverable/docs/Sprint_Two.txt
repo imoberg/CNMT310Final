@@ -1,0 +1,27 @@
+SPRINT TWO BACKLOG
+
+-Adding Bookmarks (
+	-Bookmarks Page
+	-Form for adding bookmarks
+	-Script for running adding bookmarks
+	-Authenticating Bookmarks
+	-Listing Bookmarks
+	-Error Handling
+	-Clean Look
+
+-Deleteing Bookmarks
+	-Bookmarks Page
+	-Form for deleteing bookmarks
+	-Script for running delete bookmarks
+	-Authenticating deleting bookmarks
+	-Removing Deleted Bookmark From Listed Bookmarks
+	-Error Handling
+	-Clean Look 
+	
+	
+-Getting Bookmarks
+	-Bookmarks Page
+	-List Bookmarks
+	-Authentication Bookmarks to list 
+	-Error Handling
+	-Clean Look

@@ -1,0 +1,9 @@
+-User Authentication
+-Add Bookmarks
+-Delete Bookmark
+-View Bookmarks
+-Track Visits\
+-Gather Browsing History
+-Sharing Bookmarks
+-Sharing Popularity
+-Searching Bookmarks
