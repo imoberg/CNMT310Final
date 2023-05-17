@@ -112,7 +112,11 @@ if (isset($ac) && !empty($ac)) {
         $listItems .= '<li>________________________________________________________________________________________________</li>';
     }
 } else {
+<<<<<<< HEAD
      $listItems .= '<li><span class="bookmarkList">You Don\'t have any bookmarks!</span></li>';
+=======
+    $listItems = '<li><span class="bookmarkList">You Don\'t have any bookmarks!</span></li>';
+>>>>>>> 68298eb912d79b6cbf93c51a515e63493a55ad26
 }
 #endregion
 #region Tab Functionality"
@@ -133,7 +137,12 @@ print '             </ol>';
 print '         </div>';
 $popItems = '';
 if (!isset($popBookmarks) || empty($popBookmarks)) {
+<<<<<<< HEAD
     $popItems = '<li><span class="bookmarkList">No Popular Bookmarks Yet!</span><li>';
+=======
+    $popItems = '<li><span class="bookmarkList">No Popular Bookmarks Yet!</span></li>';
+    ;
+>>>>>>> 68298eb912d79b6cbf93c51a515e63493a55ad26
 }
 if (isset($popBookmarks) || !empty($popBookmarks)) {
     usort($popBookmarks, function ($i, $j) {
